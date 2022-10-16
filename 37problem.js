@@ -1,38 +1,44 @@
-// program to solve quadratic equation
-let root1, root2;
+// Dynamic Programming approach for
+// Fibonacci Series
 
-// take input from the user
-let a = prompt("Enter the first number: ");
-let b = prompt("Enter the second number: ");
-let c = prompt("Enter the third number: ");
+class fibonacci {
 
-// calculate discriminant
-let discriminant = b * b - 4 * a * c;
+	// Function to find the fibonacci Series
+	static int fib(int n)
+	{
 
-// condition for real and different roots
-if (discriminant > 0) {
-    root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-    root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+		// Declare an array to store
+		// Fibonacci numbers.
+		// 1 extra to handle case, n = 0
+		int f[] = new int[n + 2];
 
-    // result
-    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+		int i;
+
+		// 0th and 1st number of
+		// the series are 0 and 1
+		f[0] = 0;
+		f[1] = 1;
+
+		for (i = 2; i <= n; i++) {
+
+			// Add the previous 2 numbers
+			// in the series and store it
+			f[i] = f[i - 1] + f[i - 2];
+		}
+
+		// Nth Fibonacci Number
+		return f[n];
+	}
+
+	public static void
+	main(String args[])
+	{
+		// Given Number N
+		int N = 10;
+
+		// Print first 10 term
+		for (int i = 0; i < N; i++)
+			System.out.print(fib(i) + " ");
+	}
 }
 
-// condition for real and equal roots
-else if (discriminant == 0) {
-    root1 = root2 = -b / (2 * a);
-
-    // result
-    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
-}
-
-// if roots are not real
-else {
-    let realPart = (-b / (2 * a)).toFixed(2);
-    let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
-
-    // result
-    console.log(
-        `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
-    );
-}
