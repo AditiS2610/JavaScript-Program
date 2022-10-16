@@ -41,3 +41,4 @@ class fibonacci {
 			System.out.print(fib(i) + " ");
 	}
 }
+
