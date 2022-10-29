@@ -47,6 +47,7 @@
  -Question XX : Map, Filter and Reduce ed.
 - Question 41 : JavaScript Program for QuickSort.
 - Question 42 : How to handle browser cookies using Javascript.
+- Question 43 : Write a program to reverse a number using Javascript.
 - More Questions to be added soon!
 
 
